@@ -1,6 +1,5 @@
 const express = require("express");
 const adminRoutes = require("./routes/admin.routes");
-// const customError = require("../helper/customError");
 const userRoutes = require("./routes/user.routes");
 const app = express();
 app.use(express.json())
