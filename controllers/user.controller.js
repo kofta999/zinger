@@ -55,18 +55,18 @@ exports.addTocart = async (req, res, next) => {
     }
   }
   if (flag === arr.length) {
-    let user = await User.findOne({ email: req.body.email });
+    let user = await User.findOne({ _id: req.user.userId });
     if (user) {
       if (user.cart) {
         let oldCart = [...user.cart];
 
         await User.updateOne(
-          { email: req.body.email },
+          { _id: req.user.userId },
           { cart: oldCart.concat(req.body.cart) }
         );
       } else {
         await User.updateOne(
-          { email: req.body.email },
+          { _id: req.user.userId },
           { cart: [...req.body.cart] }
         );
       }
