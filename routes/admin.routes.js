@@ -1,7 +1,6 @@
 const router = require("express").Router();
 const productController = require("../controllers/admin.controller");
 const userController = require("../controllers/user.controller");
-const admin = require("../Authorization/Authorization_admin");
 
 router.get(
   "/admin/getAllproducts",

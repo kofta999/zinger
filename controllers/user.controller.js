@@ -1,15 +1,9 @@
 const User = require("../models/user.model");
 const jwt = require("jsonwebtoken");
-
-const util = require("util");
-const AsyncAsign = util.promisify(jwt.sign);
-
 const Product = require("../models/product.model");
 const url = "mongodb://127.0.0.1:27017/online-shop";
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
-const customError = require("../helper/customError");
-const secrtkey = "hahaha";
 
 exports.signup = async (req, res, next) => {
   await mongoose.connect(url);
